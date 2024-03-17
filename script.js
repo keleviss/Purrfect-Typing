@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  var countdown; // Variable to store the countdown interval
-  var startTime; // Variable to store the start time
-  var timerRunning = false; // Variable to track if the timer is running
+  let countdown; // Variable to store the countdown interval
+  let startTime; // Variable to store the start time
+  let timerRunning = false; // Variable to track if the timer is running
 
   // Function to start the countdown timer
   function startCountdown(durationInSeconds) {
@@ -10,25 +10,27 @@ document.addEventListener('DOMContentLoaded', () => {
     clearInterval(countdown);
 
     // Set the target time (from the start time and duration)
-    var targetTime = startTime + (durationInSeconds * 1000); // Convert seconds to milliseconds
+    // var targetTime = startTime  (durationInSeconds * 1000); // Convert seconds to milliseconds
 
     // Update the countdown every second
     countdown = setInterval(function () {
       // Get the current time
-      var now = new Date().getTime();
+      // var now = new Date().getTime();
 
       // Calculate the time remaining
-      var distance = targetTime - now;
+      // var distance = targetTime - now;
 
       // Calculate seconds remaining
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      // var seconds = ((distance % (1000 * 60)) / 1000);
+
+      durationInSeconds--;
 
       // Display the countdown
-      console.log("Time remaining: " + seconds + "s");
-      document.getElementById('timer').innerText = `00:${seconds}`;
+      console.log("Time remaining: " + durationInSeconds + "s");
+      document.getElementById('timer').innerText = `${durationInSeconds}s`;
 
       // If the countdown is over, stop the timer
-      if (seconds < 1) {
+      if (durationInSeconds <= 0) {
         clearInterval(countdown);
         console.log("Countdown finished!");
       }
@@ -39,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleKeyDown(duration) {
     // Start the timer if it's not already running
     if (!timerRunning) {
-      startTime = new Date().getTime(); // Record the start time
+      // startTime = new Date().getTime(); // Record the start time
       startCountdown(duration); // Start the countdown timer with specified duration
       timerRunning = true; // Update the timer state
     }

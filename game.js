@@ -1,28 +1,21 @@
+import { startTimer, resetTimer } from "./timer.js";
+import { processText } from "./key-processor.js";
+import { commonWords, getRandomWords } from "./words.js";
+ 
+document.addEventListener('DOMContentLoaded', () => {
+  const duration = 10;
 
+  getRandomWords(commonWords, 10);
 
-let timer;
-let timeLeft = 30;
+  // When a key is pressed while we have focus on the <textarea> the test starts
+  document.querySelector('.input_area').addEventListener('keydown', (event) => {
+    startTimer(duration);
+    processText(event);
+  })
 
-function startGame() {
-  timer = setInterval(function () {
-    timeLeft--;
-    document.querySelector('.curr_time').textContent = timeLeft + 's';
-    if (timeLeft <= 0) {
-      clearInterval(timer);
-      alert('Time\'s up!');
-    }
-  }, 1000);
-}
-
-function processCurrentText() {
-  // Implement logic to process the user's input
-
-}
-
-function resetValues() {
-  clearInterval(timer);
-  timeLeft = 30;
-  document.querySelector('.curr_time').textContent = '30s';
-  document.querySelector('.input_area').value = '';
-}
-
+  // When the restart_btn is clicked we restart the Interval and reset the <textarea>
+  document.getElementById('restart_btn').addEventListener('click', (event) => {
+    event.preventDefault();
+    resetTimer(duration);
+  })
+})
