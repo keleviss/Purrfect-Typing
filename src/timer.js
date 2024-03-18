@@ -19,6 +19,7 @@ export function startTimer(duration) {
 // Function to reset the timer
 export function resetTimer(duration) {
   clearInterval(timer);
+  testStarted = false;
   document.querySelector('.curr_time').textContent = `${duration}s`;
   document.querySelector('.input_area').value = '';
 }

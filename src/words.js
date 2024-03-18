@@ -14,7 +14,7 @@ export const commonWords = [
 
 function displayRandomWords(array) {
 
-  let wordsContent;
+  let wordsContent = '';
 
   for (let i = 0; i < array.length; i++) {
     if (i != array.length - 1) {
@@ -22,6 +22,7 @@ function displayRandomWords(array) {
     } else {
       wordsContent += `${array[i]}`;
     }
+    console.log(array[i]);
   }
 
   console.log(wordsContent);

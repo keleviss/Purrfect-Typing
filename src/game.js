@@ -17,5 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('restart_btn').addEventListener('click', (event) => {
     event.preventDefault();
     resetTimer(duration);
+    getRandomWords(commonWords, 10);
   })
 })
