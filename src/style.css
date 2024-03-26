@@ -27,3 +27,17 @@ body {
   padding: 10px 20px;
   font-size: 18px;
 }
+
+.caret {
+  height: 17px;
+  width: 1px;
+  border: 1px solid blue;
+  box-sizing: border-box;
+  border-radius: 50px;
+  position: absolute;
+}
+
+.letter {
+  box-sizing: border-box;
+  letter-spacing: 0.1em;
+}

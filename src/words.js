@@ -12,28 +12,59 @@ export const commonWords = [
   "even", "new", "want", "because", "any", "these", "give", "day", "most", "us"
 ];
 
-function displayRandomWords(array) {
+function createWordElements(words) {
 
-  let wordsContent = '';
+  // let wordsContent = '';
 
-  for (let i = 0; i < array.length; i++) {
-    if (i != array.length - 1) {
-      wordsContent += `${array[i]} `;
-    } else {
-      wordsContent += `${array[i]}`;
-    }
-    console.log(array[i]);
-  }
+  // for (let i = 0; i < array.length; i++) {
+  //   if (i != array.length - 1) {
+  //     wordsContent += `${array[i]} `;
+  //   } else {
+  //     wordsContent += `${array[i]}`;
+  //   }
+  //   console.log(array[i]);
+  // }
 
-  console.log(wordsContent);
-  document.getElementById('words').textContent = wordsContent;
+  // console.log(wordsContent);
+  // document.getElementById('words').textContent = wordsContent;
+
+  const container = document.getElementById('words');
+  container.innerHTML = '';
+
+  words.forEach(word => {
+    const wordElement = createLetterElements(word);
+    container.appendChild(wordElement);
+    // container.appendChild(document.createTextNode(' ')); // Space between words
+  });
+
+}
+
+// Function to split a word into letters and create elements for each
+function createLetterElements(word) {
+  const wordElement = document.createElement('div');
+  wordElement.style.display = 'inline';
+  word.split('').forEach(letter => {
+    const letterElement = document.createElement('span');
+    letterElement.textContent = letter;
+    letterElement.classList.add('letter');
+    wordElement.appendChild(letterElement);
+  });
+
+  const spaceTextNode = document.createTextNode(' ');
+  const spaceElement = document.createElement('span');
+  spaceElement.classList.add('letter');
+  spaceElement.appendChild(spaceTextNode);
+  wordElement.appendChild(spaceElement);
+
+  return wordElement;
 }
 
 // Function to get random words
-export function getRandomWords(array, numWords) {
+export function displayWords(array, numWords) {
   const shuffled = array.sort(() => 0.5 - Math.random()); // Shuffle the array
   const minimized = shuffled.slice(0, numWords); // Get the first 'numWords' elements
-  
-  displayRandomWords(minimized);
-}
 
+  createWordElements(minimized);
+
+  return minimized;
+}

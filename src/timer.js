@@ -10,7 +10,6 @@ export function startTimer(duration) {
       document.querySelector('.curr_time').textContent = `${duration}s`;
       if (duration == 0) {
         clearInterval(timer);
-        alert('Time\'s up!');
       }
     }, 1000);
   }
