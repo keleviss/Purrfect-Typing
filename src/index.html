@@ -4,21 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Test</title>
+    <title>type machine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="../imgs/catface.svg" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="my-navbar">
+        <div class="navbar-canvas">
+            <div class="navbar-logo" onclick="location.assign('./index.html')">
+                <img id="type-machine-logo" src="../imgs/cat-keyboard.svg" alt="type machine logo">
+                <h1>type machine</h1>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="header">
             <div class="timer">
                 <div class="header_text">Time</div>
-                <div class="curr_time">10s</div>
+                <div class="curr_time">10</div>
             </div>
         </div>
-        <div id="words">
+        <div class="typing-test">
+            <div class="words" id="words">
+            </div>
+            <textarea class="input_area" spellcheck="false"></textarea>
         </div>
-        <textarea class="input_area" placeholder="start typing here..."></textarea>
         <button id="restart_btn" class="restart_btn">Restart</button>
     </div>
 </body>

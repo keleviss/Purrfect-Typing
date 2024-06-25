@@ -23,7 +23,6 @@ export function createCaret(currentLetter) {
 
   document.getElementById('words').appendChild(caret);
 
-  currentLetter.getBoundingClientRect();
   const position = currentLetter.getBoundingClientRect();
   caret.style.left = `${position.left - 2}px`;
   caret.style.top = `${position.top}px`;

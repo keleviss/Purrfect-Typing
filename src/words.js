@@ -37,6 +37,10 @@ function createWordElements(words) {
     // container.appendChild(document.createTextNode(' ')); // Space between words
   });
 
+  // const inputArea = document.createElement('textarea');
+  // inputArea.classList.add('input_area');
+  // container.appendChild(inputArea);
+
 }
 
 // Function to split a word into letters and create elements for each
@@ -47,6 +51,7 @@ function createLetterElements(word) {
     const letterElement = document.createElement('span');
     letterElement.textContent = letter;
     letterElement.classList.add('letter');
+    letterElement.classList.add('letter-neutral');
     wordElement.appendChild(letterElement);
   });
 
