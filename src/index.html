@@ -18,22 +18,33 @@
     <div class="my-navbar">
         <div class="navbar-canvas">
             <div class="navbar-logo" onclick="location.assign('./index.html')">
-                <img id="type-machine-logo" src="../imgs/cat-keyboard.svg" alt="type machine logo">
-                <h1>type machine</h1>
+                <!-- <img id="type-machine-logo" src="../imgs/cat-keyboard.svg" alt="type machine logo"> -->
+                <h1 class="logo-h1">type machine</h1>
+            </div>
+            <div class="navbar-links">
+                <div class="navbar-link">Test</div>
+                <div class="navbar-link">Learn</div>
+                <div class="navbar-link">About</div>
+            </div>
+            <div class="navbar-account">
+                <div class="navbar-signup">Sign up</div>
+                <div class="navbar-login">Login</div>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="header">
             <div class="timer">
-                <div class="header_text">Time</div>
-                <div class="curr_time">10</div>
+                <div class="header_text">
+                    <!-- Time: -->
+                    <span class="curr_time">10</span>
+                </div>
             </div>
         </div>
         <div class="typing-test">
             <div class="words" id="words">
             </div>
-            <textarea class="input_area" spellcheck="false"></textarea>
+            <!-- <textarea class="input_area" spellcheck="false"></textarea> -->
         </div>
         <button id="restart_btn" class="restart_btn">Restart</button>
     </div>
