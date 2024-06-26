@@ -25,7 +25,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: var(--primary-color); */
   color: var(--text-color);
   border-radius: 100px;
   padding: 5px 15px;
@@ -36,7 +35,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 100px;
-  padding: 10px 20px;
+  width: 250px;
 }
 
 .navbar-logo>h1 {
@@ -57,8 +56,6 @@ body {
   justify-content: center;
   align-items: center;
   padding: 5px;
-  /* background-color: rgba(255, 255, 255, 5%); */
-  /* outline: 1px solid #efeeee; */
   border-radius: 100px;
   font-weight: 600;
 }
@@ -70,7 +67,7 @@ body {
 
 .navbar-link:hover {
   cursor: pointer;
-  background-color: var(--background-color);
+  text-decoration: underline;
 }
 
 .navbar-account {
@@ -78,8 +75,8 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 5px;
   font-weight: 600;
+  width: 250px;
 }
 
 .navbar-signup {
@@ -132,26 +129,11 @@ body {
 .words {
   padding: 40px 60px;
   border-radius: 30px;
-  /* background-color: var(--primary-color); */
 }
 
 .words:focus {
   outline: none;
 }
-
-/* .input_area {
-  width: 100%;
-  border-radius: 20px;
-  border: solid 1px gray;
-  color: rgb(255, 255, 255, 0%);
-  background-color: rgb(255, 255, 255, 0%);
-  resize: none;
-  opacity: 5%;
-} */
-
-/* .input_area:focus {
-  outline: none!important;
-} */
 
 .restart_btn {
   margin-top: 10px;
@@ -177,6 +159,8 @@ body {
   box-sizing: border-box;
   border-radius: 50px;
   position: absolute;
+  transition: left 0.1s ease, top 0.1s ease;
+
 }
 
 .letter {
@@ -198,5 +182,5 @@ body {
 }
 
 .space-wrong {
-  background-color: red;
+  background-color: brown;
 }
