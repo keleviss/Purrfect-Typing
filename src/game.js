@@ -17,12 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let wordInput = document.getElementById('words');
   wordInput.setAttribute('tabindex', '0');
   wordInput.focus();
+  
   wordInput.addEventListener('keydown', (event) => {
-
-    // function to check if the event.key is an alphabetical character [a-zA-Z] 
-    const isPrintableCharacter = (str) => {
-      return str.length === 1 && str.match(/[a-zA-Z]/);
-    };
 
     switch (event.key) {
 
@@ -225,6 +221,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Create a new caret and place it at the at the first character
     // caret = createCaret(letters[keyCounter]);
   })
+
+  // function to check if the event.key is an alphabetical character [a-zA-Z] 
+  const isPrintableCharacter = (str) => {
+    return str.length === 1 && str.match(/[a-zA-Z]/);
+  };
 
   // Pause the blinking animation of the caret
   function pauseCaretAnimation() {
