@@ -7,7 +7,7 @@ export function startTimer(duration) {
     testStarted = true;
     timer = setInterval(function () {
       duration--;
-      document.querySelector('.curr_time').textContent = `${duration}s`;
+      document.querySelector('.curr_time').textContent = `${duration}`;
       if (duration == 0) {
         clearInterval(timer);
       }
@@ -17,8 +17,12 @@ export function startTimer(duration) {
 
 // Function to reset the timer
 export function resetTimer(duration) {
-  clearInterval(timer);
-  testStarted = false;
-  document.querySelector('.curr_time').textContent = `${duration}s`;
-  document.querySelector('.input_area').value = '';
+  // clearInterval(timer);
+  // testStarted = false;
+  // document.querySelector('.curr_time').textContent = `${duration}`;
+
+  location.assign('./index.html');
+
+  // Reset (empty) the input area
+  // document.querySelector('.input_area').value = '';
 }

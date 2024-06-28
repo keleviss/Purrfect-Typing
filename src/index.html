@@ -4,22 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Test</title>
+    <title>type machine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="my-navbar">
+        <div class="navbar-canvas">
+            <div class="navbar-logo" onclick="location.assign('./index.html')">
+                <h1 class="logo-h1">😸Purrfect Typing</h1>
+            </div>
+            <div class="navbar-links">
+                <div class="navbar-link btn-basic btn-trans">Test</div>
+                <div class="navbar-link btn-basic btn-trans">Learn</div>
+                <div class="navbar-link btn-basic btn-trans">About</div>
+            </div>
+            <div class="navbar-account">
+                <div class= "btn-basic btn-trans">Login</div>
+                <div class="btn-basic btn-solid">Sign up</div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="header">
             <div class="timer">
-                <div class="header_text">Time</div>
-                <div class="curr_time">10s</div>
+                <div class="header_text">
+                    <span class="curr_time">10</span>
+                </div>
             </div>
         </div>
-        <div id="words">
+        <div class="typing-test">
+            <div class="words" id="words"></div>
         </div>
-        <textarea class="input_area" placeholder="start typing here..."></textarea>
-        <button id="restart_btn" class="restart_btn">Restart</button>
+        <button id="restart_btn" class="btn-basic btn-solid">Restart</button>
     </div>
 </body>
 <script type="module" src="game.js"></script>
