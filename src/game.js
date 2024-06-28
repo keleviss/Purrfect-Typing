@@ -10,15 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let words = displayWords(commonWords, 20);
   let letters = document.querySelectorAll('.letter');
 
-  let caret = createCaret(letters[keyCounter]);
+  window.addEventListener('load', () => {
+    createCaret(letters[keyCounter]);
+  })
 
-  // When a key is pressed while we have focus on the <textarea> the test starts
   let wordInput = document.getElementById('words');
   wordInput.setAttribute('tabindex', '0');
   wordInput.focus();
   wordInput.addEventListener('keydown', (event) => {
-    // When a key is pressed start the timer
-    startTimer(duration);
 
     // function to check if the event.key is an alphabetical character [a-zA-Z] 
     const isPrintableCharacter = (str) => {
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // Move caret to the left (previous character)
           keyCounter--;
-          setCaretPosition(caret, letters[keyCounter]);
+          setCaretPosition(letters[keyCounter]);
 
           // Remove any coloring from the letters or spaces
           letters[keyCounter].classList.remove('space-wrong');
@@ -52,6 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
       // If user pressed the 'Space' key
       case ' ':
 
+        // When a key is pressed start the timer
+        startTimer(duration);
+        pauseCaretAnimation();
+
         console.log('Spacebar pressed');
         if (keyCounter < letters.length - 1) {
 
@@ -63,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           keyCounter++;
-          setCaretPosition(caret, letters[keyCounter]);
+          setCaretPosition(letters[keyCounter]);
         }
         break;
       //
@@ -72,6 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
       default:
 
         if (isPrintableCharacter(event.key)) { // If user pressed any alphabetical character [a-zA-Z] key
+
+          // When a key is pressed start the timer
+          startTimer(duration);
+          pauseCaretAnimation();
 
           console.log('Character pressed:', event.key);
           if (keyCounter < letters.length - 1) {
@@ -95,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Move caret to the right (next character)
             keyCounter++;
-            setCaretPosition(caret, letters[keyCounter]);
+            setCaretPosition(letters[keyCounter]);
 
           }
         }
@@ -104,9 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   // Event listener for when the wordInput div loses focus
-  wordInput.addEventListener('blur', function() {
+  wordInput.addEventListener('blur', function () {
     console.log('Div lost focus');
-});
+  });
 
   /*
   document.querySelector('.input_area').addEventListener('keydown', (event) => {
@@ -218,4 +225,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Create a new caret and place it at the at the first character
     // caret = createCaret(letters[keyCounter]);
   })
+
+  // Pause the blinking animation of the caret
+  function pauseCaretAnimation() {
+    const caret = document.querySelector('.caret');
+    caret.classList.remove('blink');
+  }
 })

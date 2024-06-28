@@ -14,32 +14,13 @@ export const commonWords = [
 
 function createWordElements(words) {
 
-  // let wordsContent = '';
-
-  // for (let i = 0; i < array.length; i++) {
-  //   if (i != array.length - 1) {
-  //     wordsContent += `${array[i]} `;
-  //   } else {
-  //     wordsContent += `${array[i]}`;
-  //   }
-  //   console.log(array[i]);
-  // }
-
-  // console.log(wordsContent);
-  // document.getElementById('words').textContent = wordsContent;
-
   const container = document.getElementById('words');
   container.innerHTML = '';
 
   words.forEach(word => {
     const wordElement = createLetterElements(word);
     container.appendChild(wordElement);
-    // container.appendChild(document.createTextNode(' ')); // Space between words
   });
-
-  // const inputArea = document.createElement('textarea');
-  // inputArea.classList.add('input_area');
-  // container.appendChild(inputArea);
 
 }
 

@@ -41,6 +41,7 @@ body {
 .navbar-logo>h1 {
   margin: 0;
   padding: 0;
+  font-size: 1.75em;
 }
 
 .navbar-logo:hover {
@@ -60,14 +61,34 @@ body {
   font-weight: 600;
 }
 
-.navbar-link {
+/* Buttons */
+.btn-basic {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  border: none;
   border-radius: 100px;
   padding: 10px 20px;
+  transition: background-color 0.4s;
 }
 
-.navbar-link:hover {
+.btn-trans {
+  background-color: var(--background-color);
+}
+
+.btn-trans:hover {
   cursor: pointer;
-  text-decoration: underline;
+  background-color: rgba(80, 153, 126, 0.1);
+}
+
+.btn-solid {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.btn-solid:hover {
+  cursor: pointer;
+  background-color: var(--secondary-color);
 }
 
 .navbar-account {
@@ -75,35 +96,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-weight: 600;
   width: 250px;
-}
-
-.navbar-signup {
-  padding: 10px 20px;
-  border-radius: 100px;
-  background-color: var(--text-color);
-  color: var(--background-color);
-}
-
-.navbar-signup:hover {
-  cursor: pointer;
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-.navbar-login {
-  padding: 10px 20px;
-  color: var(--text-color);
-  outline: 2px solid var(--text-color);
-  border-radius: 100px;
-}
-
-.navbar-login:hover {
-  cursor: pointer;
-  background-color: var(--text-color);
-  color: var(--background-color);
-  outline: none;
 }
 
 .container {
@@ -135,21 +128,13 @@ body {
   outline: none;
 }
 
-.restart_btn {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-family: "DM Sans", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  color: var(--background-color);
-  background-color: var(--text-color);
-  border-radius: 100px;
-  border: none;
+@keyframes blink-animation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-.restart_btn:hover {
-  cursor: pointer;
-  background-color: var(--secondary-color);
+.blink {
+  animation: blink-animation 1s ease infinite alternate;
 }
 
 .caret {
@@ -160,7 +145,6 @@ body {
   border-radius: 50px;
   position: absolute;
   transition: left 0.1s ease, top 0.1s ease;
-
 }
 
 .letter {

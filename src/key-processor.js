@@ -8,8 +8,8 @@ export function processText(event) {
   }
 }
 
-export function setCaretPosition(caret, currentLetter) {
-
+export function setCaretPosition(currentLetter) {
+  let caret = document.querySelector('.caret');
   const position = currentLetter.getBoundingClientRect();
   caret.style.left = `${position.left - 2}px`;
   caret.style.top = `${position.top}px`;
@@ -20,10 +20,11 @@ export function createCaret(currentLetter) {
 
   const caret = document.createElement('div');
   caret.classList.add('caret');
+  caret.classList.add('blink');
 
   document.getElementById('words').appendChild(caret);
 
-  setCaretPosition(caret, currentLetter);
+  setCaretPosition(currentLetter);
 
   return caret;
 
