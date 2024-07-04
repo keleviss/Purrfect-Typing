@@ -2,7 +2,7 @@
 
 Work in progreess! Not all features are available yet.
 
-Purrfect Typing a fun and interactive typing test designed to help you measure and improve your typing speed and accuracy. Whether you're a beginner looking to enhance your typing skills or a seasoned pro aiming to maintain your speed, Purrfect Typing is the purrfect tool for you!
+Purrfect Typing is a fun and interactive typing test designed to help you measure and improve your typing speed and accuracy. Whether you're a beginner looking to enhance your typing skills or a seasoned pro aiming to maintain your speed, Purrfect Typing is the purrfect tool for you!
 
 Typing is a crucial skill in today's digital age. Purrfect Typing helps your typing speed and accuracy but also provides a fun and engaging way to practice and improve. Challenge yourself and watch your typing skills grow!
 
