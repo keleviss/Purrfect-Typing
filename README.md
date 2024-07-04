@@ -1,4 +1,4 @@
-# Rurrfect Typing 😸
+# Purrfect Typing 😸
 
 Work in progreess! Not all features are available yet.
 
